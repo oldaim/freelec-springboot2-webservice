@@ -1,0 +1,30 @@
+buildscript {
+    ext{
+        springBootVersion = '2.1.7.RELEASE' //스프링 부트 버전
+    }
+    repositories{
+        mavenCentral()
+        jcenter()
+    }
+    dependencies{
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group 'com.jojoldu.book'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories{  //라이브러리 (의존성)을 저장 하는 원격 저장소를 어디로 할지 지정
+    mavenCentral() // 기존 -라이브러리 업로드 난이도 때문에 jcenter로 옮겨가는 추세
+}
+
+dependencies{
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
