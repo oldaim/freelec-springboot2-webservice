@@ -26,5 +26,8 @@ repositories{  //라이브러리 (의존성)을 저장 하는 원격 저장소�
 
 dependencies{
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.projectlombok:lombok')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa') //jpa 추상화 라이브러리 입니다.
+    compile('com.h2database:h2') //인메모리 관계형 데이터 베이스 입니다.
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
